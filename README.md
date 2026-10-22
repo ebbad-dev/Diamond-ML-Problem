@@ -2,6 +2,10 @@
 
 **Assignment 3 – Machine Learning Fundamentals (AIC354), COMSATS University Islamabad, Lahore Campus**
 
+**Student:** Ebbad Ur Rehman &nbsp;|&nbsp; **Registration No.:** FA24-BSE-032 &nbsp;|&nbsp; **Instructor:** Dr. Rao Muhammad Adeel Nawab
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ebbad-dev/Diamond-ML-Problem/blob/main/diamond_price_kfold_10fold.ipynb)
+
 **Live app:** https://diamond-price-predicton.streamlit.app/
 
 A regression experiment that predicts diamond prices (US $) from the
@@ -46,9 +50,9 @@ The notebook makes this choice automatically (Step 10.2).
 
 ## 1. Run the experiment on Google Colab
 
-1. Open https://colab.research.google.com → **File → Upload notebook** → `diamond_price_kfold_10fold.ipynb`.
+1. Click the **Open in Colab** badge above (or https://colab.research.google.com → **File → Upload notebook**).
 2. **Runtime → Change runtime type → CPU** → **Runtime → Run all**.
-   Step 2.1 downloads the dataset from Kaggle automatically; if it can't, click **Choose Files** and upload `diamonds.csv`.
+   Step 2.1 downloads the dataset automatically (Kaggle, then this GitHub repo); only if both fail, click **Choose Files** and upload `diamonds.csv`.
 3. Read the timing / resource table in **Step 9.4**. In **Step 9.5**, set `DOWNLOAD_RESULTS = True` and re-run the cell to download `cv_results_CPU.csv`.
 4. **GPU investigation:** **Runtime → Change runtime type → T4 GPU** → **Run all** again (downloads `cv_results_GPU.csv`).
    Optionally run a third time with `USE_CUML_ACCEL = True` in Step 0.2 (RAPIDS cuML runs supported estimators on the GPU).
