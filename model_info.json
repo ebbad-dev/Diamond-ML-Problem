@@ -1,0 +1,132 @@
+{
+  "problem": "Diamond Price Prediction",
+  "dataset": "Kaggle shivam2503/diamonds (53,794 unique diamonds)",
+  "algorithm": "Hist Gradient Boosting",
+  "scikit_learn_version": "1.9.1",
+  "cross_validation": "10-fold (shuffle=True, random_state=42)",
+  "cv_rmse": 551.0452319470226,
+  "cv_rmse_std": 27.387018114573298,
+  "cv_mae": 289.83504592742935,
+  "cv_r2": 0.9808829747811414,
+  "selection_note": "Extra Trees had the lowest cross-validation RMSE, but its trained model (682 MB) is too large to deploy (limit 100 MB). Hist Gradient Boosting was deployed instead: its model is 0.37 MB and its RMSE is only 1.5% higher.",
+  "numeric_features": [
+    "carat",
+    "depth",
+    "table",
+    "x",
+    "y",
+    "z"
+  ],
+  "categorical_features": [
+    "cut",
+    "color",
+    "clarity"
+  ],
+  "categories": {
+    "cut": [
+      "Fair",
+      "Good",
+      "Very Good",
+      "Premium",
+      "Ideal"
+    ],
+    "color": [
+      "J",
+      "I",
+      "H",
+      "G",
+      "F",
+      "E",
+      "D"
+    ],
+    "clarity": [
+      "I1",
+      "SI2",
+      "SI1",
+      "VS2",
+      "VS1",
+      "VVS2",
+      "VVS1",
+      "IF"
+    ]
+  },
+  "numeric_ranges": {
+    "carat": {
+      "min": 0.2,
+      "max": 5.01,
+      "median": 0.7
+    },
+    "depth": {
+      "min": 43.0,
+      "max": 79.0,
+      "median": 61.8
+    },
+    "table": {
+      "min": 43.0,
+      "max": 95.0,
+      "median": 57.0
+    },
+    "x": {
+      "min": 3.73,
+      "max": 10.74,
+      "median": 5.7
+    },
+    "y": {
+      "min": 3.68,
+      "max": 58.9,
+      "median": 5.71
+    },
+    "z": {
+      "min": 1.07,
+      "max": 31.8,
+      "median": 3.53
+    }
+  },
+  "comparison": [
+    {
+      "Rank": 1,
+      "Algorithm": "Extra Trees",
+      "Mean RMSE ($)": 542.8424794967252,
+      "Std RMSE ($)": 20.136812874913687,
+      "Mean MAE ($)": 266.29818057807415,
+      "Mean R2": 0.9814523685579875,
+      "Time (s)": 64.92503466999983
+    },
+    {
+      "Rank": 2,
+      "Algorithm": "Hist Gradient Boosting",
+      "Mean RMSE ($)": 551.0452319470226,
+      "Std RMSE ($)": 27.387018114573298,
+      "Mean MAE ($)": 289.83504592742935,
+      "Mean R2": 0.9808829747811414,
+      "Time (s)": 10.016377148999709
+    },
+    {
+      "Rank": 3,
+      "Algorithm": "MLP Neural Network",
+      "Mean RMSE ($)": 682.3282606674932,
+      "Std RMSE ($)": 144.4418214591288,
+      "Mean MAE ($)": 328.8445856734817,
+      "Mean R2": 0.9693840019350148,
+      "Time (s)": 271.74502902899985
+    },
+    {
+      "Rank": 4,
+      "Algorithm": "Ridge Regression",
+      "Mean RMSE ($)": 1136.3796241354498,
+      "Std RMSE ($)": 36.11647284079972,
+      "Mean MAE ($)": 735.2286259902024,
+      "Mean R2": 0.9186827911203436,
+      "Time (s)": 2.0026334680001128
+    },
+    {
+      "Rank": 5,
+      "Algorithm": "AdaBoost",
+      "Mean RMSE ($)": 1403.2435658641646,
+      "Std RMSE ($)": 26.057239389555196,
+      "Mean MAE ($)": 1028.0275694276684,
+      "Mean R2": 0.8760183209665737,
+      "Time (s)": 45.77859826000031
+    }
+  ]
+}
