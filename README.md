@@ -50,14 +50,14 @@ The notebook makes this choice automatically (Step 10.2).
 
 ## 1. Run the experiment on Google Colab
 
-1. Click the **Open in Colab** badge above (or https://colab.research.google.com → **File → Upload notebook**).
-2. **Runtime → Change runtime type → CPU** → **Runtime → Run all**.
-   Step 2.1 downloads the dataset automatically (Kaggle, then this GitHub repo); only if both fail, click **Choose Files** and upload `diamonds.csv`.
-3. Read the timing / resource table in **Step 9.4**. In **Step 9.5**, set `DOWNLOAD_RESULTS = True` and re-run the cell to download `cv_results_CPU.csv`.
-4. **GPU investigation:** **Runtime → Change runtime type → T4 GPU** → **Run all** again (downloads `cv_results_GPU.csv`).
-   Optionally run a third time with `USE_CUML_ACCEL = True` in Step 0.2 (RAPIDS cuML runs supported estimators on the GPU).
-5. In **Step 9.6**, set `COMPARE_RUNTIMES = True`, run the cell and upload the CSV(s) from the other run(s) to get the CPU vs GPU speed-up table.
-   Copy the times into the *Recorded Colab Execution Times* table under Step 9.6.
+1. Click the **Open in Colab** badge above, then **File → Save a copy in Drive**.
+2. **Run 1 (CPU):** **Runtime → Change runtime type → CPU** → **Runtime → Run all** (~10–15 min).
+   The dataset is downloaded automatically, and at the end `cv_results_CPU.csv` is downloaded to your computer.
+3. **Run 2 (GPU):** **Runtime → Change runtime type → T4 GPU** → **Runtime → Run all**.
+   In **Step 9.6**, upload `cv_results_CPU.csv` when asked: the notebook shows the CPU vs GPU speed-up and prints a
+   ready-to-paste table for *Recorded Colab Execution Times*.
+4. *(Optional)* Run 3 with `USE_CUML_ACCEL = True` in Step 0.2 on the GPU runtime.
+5. **File → Download → Download .ipynb** and submit that file (it contains all outputs).
 
 ## 2. Run the app locally (optional)
 
