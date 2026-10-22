@@ -1,0 +1,6 @@
+Algorithm,Runtime,Hardware,Mean RMSE ($),Std RMSE ($),Mean MAE ($),Mean R2,Time (s),Avg Fit per Fold (s),Avg Predict per Fold (s),Predictions per Second,Avg CPU (%),Peak RAM (GB)
+Extra Trees,CPU,"Colab CPU runtime, 2 CPU cores",542.84,20.14,266.3,0.9815,129.4,12.76,0.163,32907,99,1.18
+Hist Gradient Boosting,CPU,"Colab CPU runtime, 2 CPU cores",550.77,27.51,289.63,0.9809,11.7,1.11,0.056,96406,59,0.45
+MLP Neural Network,CPU,"Colab CPU runtime, 2 CPU cores",682.33,144.44,328.84,0.9694,203.3,20.31,0.016,335133,94,0.45
+Ridge Regression,CPU,"Colab CPU runtime, 2 CPU cores",1136.38,36.12,735.23,0.9187,3.2,0.28,0.028,193796,100,0.34
+AdaBoost,CPU,"Colab CPU runtime, 2 CPU cores",1403.24,26.06,1028.03,0.876,34.7,3.44,0.028,189240,60,0.45

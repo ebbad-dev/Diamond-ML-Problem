@@ -33,20 +33,29 @@ The selected model is served by a **Streamlit** web app.
 | 4 | AdaBoost | Ensemble – boosting |
 | 5 | MLP Regressor | Neural network |
 
-## Results (10-fold cross validation, 53,794 unique diamonds)
+## Results (10-fold cross validation on Google Colab, 53,794 unique diamonds)
 
-| Rank | Algorithm | Mean RMSE | Std RMSE | Mean MAE | R² | Time, 10 folds (4-core CPU) |
-|---|---|---|---|---|---|---|
-| 1 | Extra Trees | **$543** | $20 | **$266** | **0.981** | ≈ 60 s |
-| 2 | Hist Gradient Boosting | $551 | $27 | $290 | 0.981 | ≈ 10 s |
-| 3 | MLP Neural Network | $682 | $144 | $329 | 0.969 | ≈ 265 s |
-| 4 | Ridge Regression | $1,136 | $36 | $735 | 0.919 | ≈ 2 s |
-| 5 | AdaBoost | $1,403 | $26 | $1,028 | 0.876 | ≈ 45 s |
+| Rank | Algorithm | Mean RMSE | Std RMSE | Mean MAE | R² | Colab CPU time | Colab T4 GPU time |
+|---|---|---|---|---|---|---|---|
+| 1 | Extra Trees | **$543** | $20 | **$266** | **0.981** | 129.4 s | 169.4 s |
+| 2 | Hist Gradient Boosting | $551 | $28 | $290 | 0.981 | 11.7 s | 11.9 s |
+| 3 | MLP Neural Network | $682 | $144 | $329 | 0.969 | 203.3 s | 273.7 s |
+| 4 | Ridge Regression | $1,136 | $36 | $735 | 0.919 | 3.2 s | 1.8 s |
+| 5 | AdaBoost | $1,403 | $26 | $1,028 | 0.876 | 34.7 s | 34.9 s |
 
 **Deployed model: Hist Gradient Boosting.** Extra Trees is the most accurate, but its trained model is 682 MB:
 too large for GitHub (100 MB file limit) and for a Streamlit Community Cloud app (~1 GB RAM).
-Hist Gradient Boosting's model is 0.37 MB, trains ~6× faster and its RMSE is only 1.5% higher.
+Hist Gradient Boosting's model is 0.37 MB, trains ~11× faster and its RMSE is only 1.5% higher.
 The notebook makes this choice automatically (Step 10.2).
+
+**GPU:** on the T4 runtime the GPU stayed at 0% utilisation for every algorithm. scikit-learn runs on the CPU only,
+so the GPU did not speed anything up; the time differences come from the two runs using different Colab machines.
+
+| Folder / file | Contents |
+|---|---|
+| `diamond_price_kfold_10fold.ipynb` | **Final notebook**, run on the Colab **T4 GPU** runtime, including the CPU vs GPU comparison |
+| `colab_runs/diamond_price_kfold_10fold_CPU_run.ipynb` | The same experiment run on the Colab **CPU** runtime |
+| `cv_results_CPU.csv`, `colab_runs/cv_results_*.csv` | Timing and accuracy results of each Colab run |
 
 ## 1. Run the experiment on Google Colab
 
