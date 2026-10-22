@@ -2,7 +2,7 @@
 
 **Assignment 3 – Machine Learning Fundamentals (AIC354), COMSATS University Islamabad, Lahore Campus**
 
-**Live app:** https://YOUR-APP-NAME.streamlit.app  *(replace after deploying, see below)*
+**Live app:** https://diamond-price-predicton.streamlit.app/
 
 A regression experiment that predicts diamond prices (US $) from the
 [Kaggle Diamonds dataset](https://www.kaggle.com/datasets/shivam2503/diamonds) (53,940 diamonds, full dataset).
